@@ -41,7 +41,9 @@ sudo apt-get install -y links
 # GIT ##################################################################################################################
 sudo add-apt-repository ppa:git-core/ppa -y && sudo apt-key update
 sudo apt-get update && sudo apt-get install -y git
-sudo ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+eval `ssh-agent -s`
+sudo ssh-add ~/.ssh/id_rsa
 
 
 # APACHE ###############################################################################################################
