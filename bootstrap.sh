@@ -43,6 +43,11 @@ eval `ssh-agent -s`
 sudo ssh-add ~/.ssh/id_rsa
 
 
+# RUBY #################################################################################################################
+sudo apt-get remove -y ruby
+sudo apt-add-repository ppa:brightbox/ruby-ng -y && sudo apt-key update
+sudo apt-get update && sudo apt-get install -y ruby2.2
+
 # APACHE ###############################################################################################################
 sudo add-apt-repository ppa:ondrej/apache2 -y && sudo apt-key update
 sudo apt-get update && sudo apt-get install -y apache2 apache2-mpm-worker

@@ -8,6 +8,7 @@
 * APACHE > 2.4.10
 * PHP 5.6.*
 * CURL > 7.35.0
+* RUBY 2.2.0
 * PHP CURL
 * PHP MCRYPT
 * PHP XDEBUG
