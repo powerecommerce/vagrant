@@ -1,0 +1,6 @@
+*
+!.gitignore
+!bootstrap.sh
+!LICENSE.md
+!README.md
+!Vagrantfile
