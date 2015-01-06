@@ -23,9 +23,6 @@
 # THE SOFTWARE.
 #
 ########################################################################################################################
-
-
-# SYSTEM ###############################################################################################################
 sudo apt-get update
 sudo apt-get upgrade -y
 
@@ -62,7 +59,7 @@ multiverse="
     deb http://security.ubuntu.com/ubuntu trusty-security multiverse
 "
 sudo bash -c "echo '${multiverse}' > /etc/apt/sources.list.d/trusty.multiverse.list"
-sudo apt-get update && sudo apt-get install -y libapache2-mod-fastcgi php5-fpm php5 php5-cli
+sudo apt-get update && sudo apt-get install -y libapache2-mod-fastcgi php5-fpm php5 php5-cli php5-common
 sudo bash -c "echo '' >> /etc/apache2/mods-available/fastcgi.conf"
 fcgi="
     <IfModule mod_fastcgi.c>
@@ -100,6 +97,25 @@ sudo sed -i 's/SSLProtocol all/SSLProtocol all -SSLv3/' /etc/apache2/mods-availa
 # MCRYPT ###############################################################################################################
 sudo apt-get install -y php5-mcrypt
 sudo php5enmod mcrypt
+
+
+# XDEBUG ###############################################################################################################
+sudo apt-get install -y php5-xdebug
+mkdir /var/www/xdebug
+xdebug="
+    zend_extension=xdebug.so
+    xdebug.remote_enable = 1
+    xdebug.remote_handler = \"dbgp\"
+    xdebug.remote_connect_back = 1
+    xdebug.remote_port = 9000
+    xdebug.idekey = \"XDEBUG\"
+    xdebug.profiler_enable_trigger = 1
+    xdebug.profiler_output_dir = \"/var/www/xdebug\"
+    xdebug.trace_enable_trigger = 1
+    xdebug.trace_output_dir = \"/var/www/xdebug\"
+    xdebug.max_nesting_level = 1000
+"
+sudo bash -c "echo '${xdebug}' > /etc/php5/fpm/conf.d/20-xdebug.ini"
 
 
 # REWRITE ##############################################################################################################
