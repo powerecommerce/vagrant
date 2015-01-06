@@ -52,6 +52,11 @@ sudo apt-get update && sudo apt-get install -y ruby2.2
 # NODEJS ###############################################################################################################
 sudo add-apt-repository ppa:chris-lea/node.js -y && sudo apt-key update
 sudo apt-get update && sudo apt-get install -y nodejs
+sudo npm install npm -g
+
+
+# YEOMAN ###############################################################################################################
+sudo npm install -g yo bower grunt-cli gulp
 
 
 # APACHE ###############################################################################################################
