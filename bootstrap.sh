@@ -48,6 +48,12 @@ sudo apt-get remove -y ruby
 sudo apt-add-repository ppa:brightbox/ruby-ng -y && sudo apt-key update
 sudo apt-get update && sudo apt-get install -y ruby2.2
 
+
+# NODEJS ###############################################################################################################
+sudo add-apt-repository ppa:chris-lea/node.js -y && sudo apt-key update
+sudo apt-get update && sudo apt-get install -y nodejs
+
+
 # APACHE ###############################################################################################################
 sudo add-apt-repository ppa:ondrej/apache2 -y && sudo apt-key update
 sudo apt-get update && sudo apt-get install -y apache2 apache2-mpm-worker

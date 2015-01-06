@@ -9,6 +9,7 @@
 * PHP 5.6.*
 * CURL > 7.35.0
 * RUBY 2.2.0
+* NODEJS > 0.10.33
 * PHP CURL
 * PHP MCRYPT
 * PHP XDEBUG
