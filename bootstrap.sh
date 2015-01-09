@@ -91,6 +91,7 @@ fcgi="
 sudo bash -c "echo '${fcgi}' > /etc/apache2/conf-available/php5-fpm.conf"
 sudo a2enmod actions fastcgi alias
 sudo a2enconf php5-fpm
+sudo bash -c "echo 'security.limit_extensions = .php .html .php.html' >> /etc/php5/fpm/pool.d/www.conf"
 
 
 # CURL #################################################################################################################
