@@ -115,6 +115,10 @@ sudo apt-get install -y php5-mcrypt
 sudo php5enmod mcrypt
 
 
+# GMP ##################################################################################################################
+sudo apt-get install -y php5-gmp
+
+
 # XDEBUG ###############################################################################################################
 sudo apt-get install -y php5-xdebug
 mkdir /var/www/xdebug
@@ -175,7 +179,7 @@ sudo bash -c "curl -sS https://getcomposer.org/installer | php"
 sudo mv composer.phar /usr/local/bin/composer
 
 
-# SAAS #################################################################################################################
+# SASS #################################################################################################################
 gem install sass
 
 
