@@ -82,7 +82,7 @@ fcgi="
         AddHandler php5-fcgi .php
         Action php5-fcgi /php5-fcgi
         Alias /php5-fcgi /usr/lib/cgi-bin/php5-fcgi
-        FastCgiExternalServer /usr/lib/cgi-bin/php5-fcgi -socket /var/run/php5-fpm.sock -pass-header Authorization
+        FastCgiExternalServer /usr/lib/cgi-bin/php5-fcgi -appConnTimeout 10000 -idle-timeout 10000 -socket /var/run/php5-fpm.sock -pass-header Authorization
         <Directory /usr/lib/cgi-bin>
             Require all granted
         </Directory>
