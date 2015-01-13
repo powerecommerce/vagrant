@@ -222,10 +222,15 @@ sudo apt-get install -y mongodb-org php5-mongo
 
 # MYSQL ################################################################################################################
 sudo add-apt-repository ppa:ondrej/mysql-5.6 -y && sudo apt-key update
-sudo apt-get update && sudo apt-get install -y
+sudo apt-get update
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 sudo apt-get -y install mysql-server mysql-client php5-mysqlnd
+
+
+# REDIS ################################################################################################################
+sudo apt-add-repository ppa:chris-lea/redis-server -y && sudo apt-key update
+sudo apt-get update && sudo apt-get install -y redis-server php5-redis redis-tools
 
 
 # RESTART ##############################################################################################################
