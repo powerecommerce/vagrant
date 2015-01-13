@@ -98,6 +98,34 @@ sudo bash -c "echo 'security.limit_extensions = .php .html .php.html' >> /etc/ph
 sudo apt-get install -y curl php5-curl
 
 
+# GD ###################################################################################################################
+sudo apt-get install -y php5-gd
+
+
+# XSL ##################################################################################################################
+sudo apt-get install -y php5-xsl
+
+
+# JSON #################################################################################################################
+sudo apt-get install -y php5-json
+
+
+# IMAGICK ##############################################################################################################
+sudo apt-get install -y php5-imagick
+
+
+# IMAP #################################################################################################################
+sudo apt-get install -y php5-imap
+
+
+# INTL #################################################################################################################
+sudo apt-get install -y php5-intl
+
+
+# XML-RPC ##############################################################################################################
+sudo apt-get install -y php5-xmlrpc
+
+
 # SSL/TLS ##############################################################################################################
 sudo apt-get install -y openssl
 sudo a2enmod ssl
@@ -189,7 +217,15 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' \
  | sudo tee /etc/apt/sources.list.d/mongodb.list
 sudo apt-get update
-sudo apt-get install -y mongodb-org
+sudo apt-get install -y mongodb-org php5-mongo
+
+
+# MYSQL ################################################################################################################
+sudo add-apt-repository ppa:ondrej/mysql-5.6 -y && sudo apt-key update
+sudo apt-get update && sudo apt-get install -y
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
+sudo apt-get -y install mysql-server mysql-client php5-mysqlnd
 
 
 # RESTART ##############################################################################################################
