@@ -243,10 +243,8 @@ sudo apt-get install -y php5-dev
 
 # SPL-TYPES ############################################################################################################
 sudo pecl install SPL_Types
-splTypes="
-    zend_extension=spl_types.so
-"
-sudo bash -c "echo '${splTypes}' > /etc/php5/fpm/conf.d/20-spl_types.ini"
+echo extension=spl_types.so | sudo tee /etc/php5/mods-available/spl_types.ini
+sudo php5enmod spl_types
 
 
 # RESTART ##############################################################################################################
