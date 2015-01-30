@@ -233,6 +233,22 @@ sudo apt-add-repository ppa:chris-lea/redis-server -y && sudo apt-key update
 sudo apt-get update && sudo apt-get install -y redis-server php5-redis redis-tools
 
 
+# PHP-PEAR #############################################################################################################
+sudo apt-get install -y php-pear
+
+
+# PHP-DEV ##############################################################################################################
+sudo apt-get install -y php5-dev
+
+
+# SPL-TYPES ############################################################################################################
+sudo pecl install SPL_Types
+splTypes="
+    zend_extension=spl_types.so
+"
+sudo bash -c "echo '${splTypes}' > /etc/php5/fpm/conf.d/20-spl_types.ini"
+
+
 # RESTART ##############################################################################################################
 sudo service apache2 restart
 sudo service php5-fpm restart
