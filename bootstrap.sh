@@ -225,7 +225,7 @@ sudo add-apt-repository ppa:ondrej/mysql-5.6 -y && sudo apt-key update
 sudo apt-get update
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-sudo apt-get -y install mysql-server mysql-client php5-mysqlnd
+sudo apt-get -y install mysql-server-5.6 mysql-client php5-mysqlnd
 
 
 # REDIS ################################################################################################################
